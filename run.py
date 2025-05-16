@@ -80,6 +80,8 @@ def main():
     args = parser.parse_args()
 
     args.use_gpu = True if torch.cuda.is_available() and args.use_gpu else False
+    print(torch.cuda.is_available())
+    print(torch.__version__)
 
     if args.use_gpu and args.use_multi_gpu:
         args.devices = args.devices.replace(' ', '')
